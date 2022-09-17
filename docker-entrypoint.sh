@@ -6,4 +6,4 @@ python manage.py migrate
 
 # Start server
 echo "Starting server"
-python manage.py runserver 0.0.0.0:$PORT
+gunicorn bakeoff_python_django.wsgi:application --bind 0.0.0.0:$PORT --workers=3
